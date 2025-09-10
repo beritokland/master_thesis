@@ -18,4 +18,4 @@ multiqc .
 
 #### REMOVAL OF ADAPTER SEQUENCES USING Trimmomatic
 
-Run [trimmomatic.sh](ATAC-seq/trimmomatic.sh)
+Run [trimmomatic.sh](trimmomatic.sh)
