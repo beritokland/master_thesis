@@ -8,7 +8,7 @@
 
 3. Make all scripts executable: 
 
-```{bash}
+```bash
 chmod +x scripts/*.sh
 ```
 
@@ -22,12 +22,37 @@ Run the FastQC analysis script [fastqc.sh](scripts/fastqc.sh):
 
 Use MultiQC to summarize the results for all files in one html report:
 
-```{bash}
+```bash
 cd ./fastqc_initial/
 multiqc .
 ```
 
-#### REMOVAL OF ADAPTER SEQUENCES USING Trimmomatic
+#### Removal of adapter sequences using Trimmomatic
 
-Run [trimmomatic.sh](trimmomatic.sh)
+Run the Trimmomatic script [trimmomatic.sh](scripts/trimmomatic.sh):
+
+```bash
+./scripts/trimmomatic.sh
+```
+
+#### Alignment of sequencing reads to GRCh38 
+
+Setup (run once) for downloading and indexing the reference genome:
+
+```bash
+./scripts/setup_reference.sh
+```
+
+Run the Bowtie2 alignment script [bowtie2_align.sh](scripts/bowtie2_align.sh):
+
+```bash
+./scripts/bowtie2_align.sh
+```
+
+
+
+
+
+
+
 
