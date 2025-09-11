@@ -37,7 +37,7 @@ Run the Trimmomatic script [trimmomatic.sh](scripts/trimmomatic.sh):
 
 #### Alignment of sequencing reads to GRCh38 
 
-Setup (run once) for downloading and indexing the reference genome:
+Setup script [setup_reference.sh](scripts/setup_reference.sh) for downloading and indexing the reference genome (run once):
 
 ```bash
 ./scripts/setup_reference.sh
