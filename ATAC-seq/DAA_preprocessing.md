@@ -5,7 +5,7 @@
 - R (version 4.0 or higher recommended)
 - Required R packages (install via `install.packages()` or `BiocManager::install()`)
 
-##### Required libraries:
+*Required libraries:*
 
 ```r
 library(GenomicRanges)
