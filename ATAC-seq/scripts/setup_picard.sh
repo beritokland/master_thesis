@@ -1,10 +1,17 @@
 #!/bin/bash
-# Download Picard tools
+# setup_picard.sh - Download Picard tools
 
-# Configuration
+# =============================================================================
+# CONFIGURATION - Modify these variables for your setup
+# =============================================================================
+
 TOOLS_DIR="tools"
-PICARD_VERSION="3.1.1"  # Latest stable version
+PICARD_VERSION="3.1.1"
 PICARD_URL="https://github.com/broadinstitute/picard/releases/download/${PICARD_VERSION}/picard.jar"
+
+# =============================================================================
+# SCRIPT EXECUTION
+# =============================================================================
 
 echo "Setting up Picard tools..."
 
@@ -15,15 +22,8 @@ mkdir -p "$TOOLS_DIR"
 if [[ ! -f "$TOOLS_DIR/picard.jar" ]]; then
     echo "Downloading Picard version $PICARD_VERSION..."
     wget "$PICARD_URL" -O "$TOOLS_DIR/picard.jar"
-    
-    if [[ $? -eq 0 ]]; then
-        echo "✓ Picard downloaded successfully"
-    else
-        echo "✗ Failed to download Picard"
-        exit 1
-    fi
 else
-    echo "Picard already exists at $TOOLS_DIR/picard.jar"
+    echo "Picard already exists"
 fi
 
 echo "Picard setup complete!"

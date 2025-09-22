@@ -1,11 +1,18 @@
 #!/bin/bash
-# Download and index GRCh38 reference genome
+# setup_reference.sh - Download and index GRCh38 reference genome
 
-# Configuration
+# =============================================================================
+# CONFIGURATION - Modify these variables for your setup
+# =============================================================================
+
 REF_DIR="reference_genome"
 REF_URL="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz"
 REF_FILE="GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz"
 INDEX_NAME="GRCh38_index"
+
+# =============================================================================
+# SCRIPT EXECUTION
+# =============================================================================
 
 echo "Setting up reference genome..."
 
@@ -18,7 +25,7 @@ if [[ ! -f "$REF_FILE" ]]; then
     echo "Downloading GRCh38 reference genome..."
     wget "$REF_URL"
 else
-    echo "Reference genome already downloaded."
+    echo "Reference genome already downloaded"
 fi
 
 # Extract if needed
@@ -32,8 +39,7 @@ if [[ ! -f "${INDEX_NAME}.1.bt2" ]]; then
     echo "Building Bowtie2 index..."
     bowtie2-build "${REF_FILE%.gz}" "$INDEX_NAME"
 else
-    echo "Bowtie2 index already exists."
+    echo "Bowtie2 index already exists"
 fi
 
 echo "Reference setup complete!"
-echo "Index location: $(pwd)/$INDEX_NAME"
