@@ -1,4 +1,9 @@
-# Differential Accessibility Analysis
+# Differential Accessibility Analysis Preprocessing 
+
+## Requirements
+
+- R (version 4.0 or higher recommended)
+- Required R packages (install via `install.packages()` or `BiocManager::install()`)
 
 ## Required libraries 
 
